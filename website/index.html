@@ -179,6 +179,13 @@
             color: #2c3e50;
         }
 
+        .report-time {
+            font-size: 11px;
+            color: #95a5a6;
+            margin-left: 6px;
+            font-weight: 300;
+        }
+
         .report-stats {
             display: flex;
             gap: 10px;
@@ -335,7 +342,10 @@
             container.innerHTML = list.map(report => `
                 <div class="report-card" onclick="openReport('${report.file}')">
                     <div class="report-header">
-                        <div class="report-date">${formatDate(report.date)}</div>
+                        <div>
+                            <span class="report-date">${formatDate(report.date)}</span>
+                            ${report.timeDisplay ? `<span class="report-time">${report.timeDisplay}</span>` : ''}
+                        </div>
                         <div class="report-stats">
                             <span>${report.hotTopicsCount} 热点</span>
                             <span>${report.ideasCount} 创意</span>

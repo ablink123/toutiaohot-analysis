@@ -28,15 +28,44 @@ function extractFromHTML(htmlPath) {
 }
 
 /**
- * 从文件名提取日期
+ * 从文件名提取日期和时间
  * 例: toutiaohot-analysis-2026-01-07.html -> 2026-01-07
+ * 例: toutiaohot-analysis-2026-01-07-10.html -> 2026-01-07, 10
+ * 例: toutiaohot-analysis-2026-01-07-morning.html -> 2026-01-07, morning
  */
-function extractDateFromFilename(filename) {
-  const match = filename.match(/(\d{4}-\d{2}-\d{2})/);
-  if (!match) {
+function extractDateTimeFromFilename(filename) {
+  const dateMatch = filename.match(/(\d{4}-\d{2}-\d{2})/);
+  if (!dateMatch) {
     throw new Error(`文件名不包含有效日期: ${filename}`);
   }
-  return match[1];
+
+  const date = dateMatch[1];
+
+  // 尝试提取时间后缀
+  const timeMatch = filename.match(/(\d{4}-\d{2}-\d{2})-(\d+)(?=\.html)/);
+  const suffixMatch = filename.match(/(\d{4}-\d{2}-\d{2})-([a-z]+)(?=\.html)/);
+
+  let time = null;
+  let timeDisplay = null;
+
+  if (timeMatch) {
+    // 数字时间：toutiaohot-analysis-2026-01-07-10.html
+    time = timeMatch[2];
+    timeDisplay = `${time}:00`;
+  } else if (suffixMatch) {
+    // 文字时间：toutiaohot-analysis-2026-01-07-morning.html
+    const suffixMap = {
+      'morning': '08:00',
+      'noon': '12:00',
+      'afternoon': '14:00',
+      'evening': '18:00',
+      'night': '21:00'
+    };
+    time = suffixMatch[2];
+    timeDisplay = suffixMap[time] || time;
+  }
+
+  return { date, time, timeDisplay };
 }
 
 /**
@@ -54,11 +83,11 @@ function archiveReport(htmlFilePath) {
     throw new Error(`文件不存在: ${absolutePath}`);
   }
 
-  // 提取文件名和日期
+  // 提取文件名、日期和时间
   const filename = path.basename(absolutePath);
-  const date = extractDateFromFilename(filename);
+  const { date, time, timeDisplay } = extractDateTimeFromFilename(filename);
 
-  console.log(`  📅 日期: ${date}`);
+  console.log(`  📅 日期: ${date}${timeDisplay ? ` ${timeDisplay}` : ''}`);
 
   // 解析日期
   const [year, month] = date.split('-');
@@ -102,6 +131,8 @@ function archiveReport(htmlFilePath) {
 
       allIdeas.push({
         date: date,
+        time: time,
+        timeDisplay: timeDisplay,
         hotTopicTitle: topic.title,
         hotTopicRank: topic.rank,
         ideaName: idea.name,
@@ -120,6 +151,8 @@ function archiveReport(htmlFilePath) {
   // 更新索引
   updateIndex({
     date,
+    time,
+    timeDisplay,
     filename,
     targetPath,
     hotTopicsCount,
@@ -133,6 +166,8 @@ function archiveReport(htmlFilePath) {
 
   return {
     date,
+    time,
+    timeDisplay,
     targetPath,
     hotTopicsCount,
     ideasCount,
@@ -170,11 +205,19 @@ function updateIndex(reportData) {
     }
   }
 
-  // 检查是否已存在该日期的报告
-  const existingReportIndex = index.reports.findIndex(r => r.date === reportData.date);
+  // 检查是否已存在该日期+时间的报告
+  const existingReportIndex = index.reports.findIndex(r => {
+    if (r.date !== reportData.date) return false;
+    // 如果都有时间字段，则时间也必须匹配
+    if (r.time && reportData.time) return r.time === reportData.time;
+    // 如果其中一个没有时间，则只匹配日期
+    return true;
+  });
 
   const reportInfo = {
     date: reportData.date,
+    time: reportData.time,
+    timeDisplay: reportData.timeDisplay,
     file: path.relative(path.join(__dirname, '..'), reportData.targetPath),
     hotTopicsCount: reportData.hotTopicsCount,
     ideasCount: reportData.ideasCount,
@@ -184,14 +227,21 @@ function updateIndex(reportData) {
 
   if (existingReportIndex >= 0) {
     // 更新现有报告
-    console.log(`  🔄 更新现有报告索引: ${reportData.date}`);
+    const reportId = reportData.time ? `${reportData.date} ${reportData.timeDisplay || reportData.time}` : reportData.date;
+    console.log(`  🔄 更新现有报告索引: ${reportId}`);
     index.reports[existingReportIndex] = reportInfo;
 
-    // 删除该日期的旧创意
-    index.allIdeas = index.allIdeas.filter(idea => idea.date !== reportData.date);
+    // 删除该日期+时间的旧创意
+    index.allIdeas = index.allIdeas.filter(idea => {
+      if (idea.date !== reportData.date) return true;
+      if (reportData.time && idea.time) return idea.time !== reportData.time;
+      if (!reportData.time && idea.time) return false;
+      return true;
+    });
   } else {
     // 添加新报告
-    console.log(`  ➕ 添加新报告索引: ${reportData.date}`);
+    const reportId = reportData.time ? `${reportData.date} ${reportData.timeDisplay || reportData.time}` : reportData.date;
+    console.log(`  ➕ 添加新报告索引: ${reportId}`);
     index.reports.push(reportInfo);
   }
 

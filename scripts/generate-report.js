@@ -395,19 +395,21 @@ async function main() {
     let excellentCount = 0;
 
     const processedTopics = hotTopics.map((topic, index) => {
-      console.log(`   处理 ${index + 1}/${hotTopics.length}: ${topic.title.substring(0, 20)}...`);
+      // 安全地获取标题
+      const title = topic.title || topic.topic || '未知标题';
+      console.log(`   处理 ${index + 1}/${hotTopics.length}: ${title.substring(0, 20)}...`);
 
-      const ideas = generateIdeas(topic);
+      const ideas = generateIdeas({ ...topic, title });
       totalIdeas += ideas.length;
       excellentCount += ideas.filter(i => i.totalScore >= 80).length;
 
       return {
-        rank: topic.rank,
-        title: topic.title,
-        abstract: topic.abstract || '',
-        hot: topic.hot || '',
-        hotValue: topic.hot || '',
-        eventTimeline: topic.abstract || '',
+        rank: topic.rank || index + 1,
+        title: title,
+        abstract: topic.abstract || topic.desc || '',
+        hot: topic.hot || topic.hotValue || '',
+        hotValue: topic.hot || topic.hotValue || '',
+        eventTimeline: topic.abstract || topic.desc || '',
         ideas: ideas
       };
     });

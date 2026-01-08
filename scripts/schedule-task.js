@@ -93,7 +93,7 @@ async function runTask() {
     // 2. 调用 Claude Code skill
     const prompt = '分析今天的头条热搜产品机会';
     const success = executeCommand(
-      `"${config.claudeCodePath}" --yes "${prompt}"`,
+      `"${config.claudeCodePath}" -p --permission-mode dontAsk "${prompt}"`,
       '执行 Claude Code skill'
     );
 

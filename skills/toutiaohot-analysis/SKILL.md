@@ -15,6 +15,7 @@ description: "自动抓取头条热搜榜单前40条热点，使用Web Search深
 3. 基于有趣度和有用度双维度评分生成产品创意
 4. 生成可视化的HTML分析报告
 5. 自动同步到飞书多维表格，实现素材积累与检索
+6. 自动归档HTML报告并生成可搜索的网站
 
 ## 工作流程
 
@@ -340,13 +341,43 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
    - 利用飞书AI字段捷径自动提取其他字段
    - 表格链接：https://ai.feishu.cn/base/Rh08b5mZka6vorsSGfAcOPN9nJg?table=tbl7Mc8608QizRnj
 
-7. **输出摘要信息**
+7. **归档HTML报告**
+   ```bash
+   node scripts/archive-report.js "toutiaohot-analysis-[YYYY-MM-DD].html"
+   ```
+   - 将HTML移动到 `reports/YYYY/MM/` 目录进行归档
+   - 提取数据并更新 `data/index.json` 索引
+   - 自动统计创意数量和评分分布
+   - 支持增量更新，重复归档会覆盖旧数据
+
+8. **生成网站**
+   ```bash
+   node scripts/generate-website.js
+   ```
+   - 将索引文件复制到 `website/data/`
+   - 将归档的报告复制到 `website/reports/`
+   - 生成 `sitemap.xml` 用于SEO
+   - 更新首页统计数据和报告列表
+
+9. **可选：部署到Vercel**
+   ```bash
+   git add .
+   git commit -m "Add new report: [YYYY-MM-DD]"
+   git push
+   ```
+   - 推送到GitHub后，Vercel会自动部署
+   - 几分钟后可通过 Vercel 域名访问最新报告
+   - 网站地址：https://toutiaohot-analysis.vercel.app
+
+10. **输出摘要信息**
    - 成功处理的热点数量
    - 生成的产品创意总数
    - 优秀创意数量（≥80分）
    - 良好创意数量（60-79分）
    - HTML报告文件路径
+   - 归档路径
    - 飞书同步状态（同步记录数）
+   - 网站链接
 
 ## 使用示例
 
@@ -376,6 +407,23 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
 🚀 准备同步 45 条记录...
 ✅ 成功同步 45 条记录！
 
+正在归档HTML报告...
+📁 开始归档: toutiaohot-analysis-2026-01-07.html
+  📅 日期: 2026-01-07
+  📂 创建目录: reports/2026/01
+  ✅ 文件已移动到: reports/2026/01/toutiaohot-analysis-2026-01-07.html
+  🔍 提取数据...
+  📊 统计: 15个热点, 30个创意, 7个优秀, 23个良好
+  💾 索引已更新: data/index.json
+
+正在生成网站...
+📊 复制索引文件...
+  ✅ 索引已复制到: website/data/index.json
+📁 复制报告文件...
+  ✅ 报告已复制到: website/reports
+🗺️  生成sitemap.xml...
+  ✅ sitemap.xml已生成
+
 === 分析摘要 ===
 分析热点数：40
 生成创意数：45
@@ -383,8 +431,14 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
 良好创意（60-79分）：15个
 普通创意（<60分）：22个
 
-报告路径：d:\DD-Stock\AI产品经理黄叔\1128TouTiao\toutiaohot-analysis-2026-01-07.html
+报告路径：reports/2026/01/toutiaohot-analysis-2026-01-07.html
 飞书表格：https://ai.feishu.cn/base/Rh08b5mZka6vorsSGfAcOPN9nJg?table=tbl7Mc8608QizRnj
+网站链接：https://toutiaohot-analysis.vercel.app
+
+💡 下一步：运行以下命令部署到Vercel
+   git add .
+   git commit -m "Add new report: 2026-01-07"
+   git push
 ```
 
 ## 技术要求
@@ -398,6 +452,15 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
    - App Secret: 5CkC6KfB9KRxnBP8t7NtxbMjVGTnkFoj
    - App Token: Rh08b5mZka6vorsSGfAcOPN9nJg
    - Table ID: tbl7Mc8608QizRnj
+6. **归档系统**：确保以下目录和脚本存在
+   - `reports/` - HTML报告归档目录
+   - `data/` - 索引数据目录
+   - `scripts/archive-report.js` - 归档脚本
+   - `scripts/build-index.js` - 索引构建脚本
+   - `scripts/generate-website.js` - 网站生成脚本
+7. **网站部署**：确保Git仓库已配置并推送到GitHub
+   - GitHub仓库: https://github.com/ablink123/toutiaohot-analysis.git
+   - Vercel会自动从GitHub拉取并部署 `website/` 目录
 
 ## 注意事项
 
@@ -407,6 +470,9 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
 4. 建议结合实际市场调研和用户验证
 5. 飞书同步失败不影响HTML报告生成，可稍后手动执行同步
 6. 确保飞书多维表格的AI字段捷径已正确配置
+7. 归档操作会移动HTML文件，确保在归档前完成飞书同步
+8. 网站生成需要先完成归档，确保索引数据是最新的
+9. Vercel部署可能需要几分钟，首次部署需要配置Root Directory为 `website/`
 
 ## 质量标准
 

@@ -313,7 +313,7 @@ function main() {
 module.exports = {
   archiveReport,
   extractFromHTML,
-  extractDateFromFilename
+  extractDateTimeFromFilename
 };
 
 // 如果直接运行此脚本

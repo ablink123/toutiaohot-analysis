@@ -9,8 +9,8 @@ const path = require('path');
 const config = {
   // Claude Code CLI 路径
   claudeCodePath: 'claude',
-  // 工作目录
-  workDir: __dirname,
+  // 工作目录（项目根目录）
+  workDir: path.join(__dirname, '..'),
   // 生成的文件名格式（支持时间后缀）
   // 可用变量：{date} (YYYY-MM-DD), {time} (HH), {hour} (H)
   filenameTemplate: 'toutiaohot-analysis-{date}-{time}.html',
@@ -21,7 +21,7 @@ const config = {
   // 是否自动同步飞书
   autoSyncFeishu: true,
   // 是否自动推送到Git
-  autoGitPush: false, // 默认不自动推送，避免频繁提交
+  autoGitPush: true, // 自动推送到GitHub，触发Vercel部署
   // Git提交消息模板
   gitCommitTemplate: 'Add report: {date} {time}'
 };
@@ -93,7 +93,7 @@ async function runTask() {
     // 2. 调用 Claude Code skill
     const prompt = '分析今天的头条热搜产品机会';
     const success = executeCommand(
-      `"${config.claudeCodePath}" "${prompt}"`,
+      `"${config.claudeCodePath}" --yes "${prompt}"`,
       '执行 Claude Code skill'
     );
 

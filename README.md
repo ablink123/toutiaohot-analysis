@@ -49,6 +49,33 @@
 6. 归档HTML
 7. 生成网站
 
+### 1.1 定时自动执行（可选）
+
+支持设置定时任务，每天自动执行分析（如8:00、14:00、20:00）：
+
+**Windows用户:**
+```bash
+# 右键以管理员身份运行
+schedules\setup-windows-task.bat
+```
+
+**Linux/Mac用户:**
+```bash
+chmod +x schedules/linux-crontab.sh
+./schedules/linux-crontab.sh
+```
+
+**跨平台方案:**
+```bash
+# 安装依赖
+npm install node-cron
+
+# 启动调度服务（保持运行）
+node schedules/scheduler-service.js
+```
+
+详细配置请查看：[schedules/README.md](schedules/README.md)
+
 ### 2. 手动操作
 
 #### 归档HTML报告

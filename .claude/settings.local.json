@@ -13,7 +13,10 @@
       "Bash(ls:*)",
       "Bash(start:*)",
       "Bash(export MAX_TOPICS=15:*)",
-      "Bash(export:*)"
+      "Bash(export:*)",
+      "Bash(cat:*)",
+      "Bash(tee:*)",
+      "Bash(echo:*)"
     ]
   }
 }

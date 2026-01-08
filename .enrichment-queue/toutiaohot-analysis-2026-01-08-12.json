@@ -1,8 +1,8 @@
 {
-  "reportPath": "D:\\DD-Stock\\AI产品经理黄叔\\1128TouTiao\\reports\2026\01\toutiaohot-analysis-2026-01-08-12.html",
+  "reportPath": "reports/2026/01/toutiaohot-analysis-2026-01-08-12.html",
   "reportName": "toutiaohot-analysis-2026-01-08-12.html",
   "createdAt": "2026-01-08T04:09:37.827Z",
-  "status": "failed",
+  "status": "completed",
   "topics": [
     {
       "rank": 1,
@@ -46,7 +46,7 @@
     },
     {
       "rank": 9,
-      "title": "中央“点名”住房公积金释放什么信号",
+      "title": "中央点名住房公积金释放什么信号",
       "currentTimeline": "暂无详细事件脉络"
     },
     {
@@ -55,9 +55,7 @@
       "currentTimeline": "暂无详细事件脉络"
     }
   ],
-  "startedAt": "2026-01-08T05:05:55.384Z",
-  "completedAt": "2026-01-08T04:28:58.206Z",
-  "note": "演示模式：仅富化了前 3 个话题",
-  "error": "ENOENT: no such file or directory, open 'D:\\DD-Stock\\AI产品经理黄叔\\1128TouTiao\\reports\2026\01\toutiaohot-analysis-2026-01-08-12.html'",
-  "failedAt": "2026-01-08T05:05:58.421Z"
+  "startedAt": "2026-01-08T05:07:57.337Z",
+  "completedAt": "2026-01-08T05:08:00.402Z",
+  "note": "演示模式：仅富化了前 3 个话题"
 }

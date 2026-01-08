@@ -72,11 +72,37 @@ function copyIndex() {
     fs.mkdirSync(config.websiteDataDir, { recursive: true });
   }
 
-  // 复制索引文件
+  // 读取索引文件
+  const indexContent = fs.readFileSync(config.dataIndexPath, 'utf-8');
+  const indexData = JSON.parse(indexContent);
+
+  // 转换路径分隔符：将 Windows 的反斜杠转换为正斜杠
+  function normalizePath(obj) {
+    if (Array.isArray(obj)) {
+      return obj.map(normalizePath);
+    } else if (obj && typeof obj === 'object') {
+      const normalized = {};
+      for (const [key, value] of Object.entries(obj)) {
+        if (key === 'file' || key === 'reportPath' || key === 'webPath') {
+          // 转换路径中的反斜杠为正斜杠
+          normalized[key] = value.replace(/\\/g, '/');
+        } else {
+          normalized[key] = normalizePath(value);
+        }
+      }
+      return normalized;
+    }
+    return obj;
+  }
+
+  const normalizedIndex = normalizePath(indexData);
+
+  // 保存到website目录
   const destPath = path.join(config.websiteDataDir, 'index.json');
-  fs.copyFileSync(config.dataIndexPath, destPath);
+  fs.writeFileSync(destPath, JSON.stringify(normalizedIndex, null, 2), 'utf-8');
 
   console.log(`  ✅ 索引已复制到: ${destPath}`);
+  console.log(`  🔄 路径已标准化为正斜杠`);
 }
 
 /**

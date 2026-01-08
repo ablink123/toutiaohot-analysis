@@ -14,6 +14,22 @@ const config = {
 };
 
 /**
+ * 格式化热度值
+ */
+function formatHotValue(hotValue) {
+  if (!hotValue) return '';
+  const num = parseInt(hotValue);
+  if (isNaN(num)) return hotValue;
+
+  if (num >= 100000000) {
+    return (num / 100000000).toFixed(1) + '亿';
+  } else if (num >= 10000) {
+    return (num / 10000).toFixed(1) + '万';
+  }
+  return hotValue.toString();
+}
+
+/**
  * 获取头条热搜数据
  */
 function fetchToutiaoHot() {
@@ -395,8 +411,10 @@ async function main() {
     let excellentCount = 0;
 
     const processedTopics = hotTopics.map((topic, index) => {
-      // 安全地获取标题
-      const title = topic.title || topic.topic || '未知标题';
+      // API 返回的字段：word (标题), hotindex (热度值)
+      const title = topic.word || topic.title || topic.topic || '未知标题';
+      const hotValue = topic.hotindex || topic.hot || topic.hotValue || '';
+
       console.log(`   处理 ${index + 1}/${hotTopics.length}: ${title.substring(0, 20)}...`);
 
       const ideas = generateIdeas({ ...topic, title });
@@ -407,8 +425,8 @@ async function main() {
         rank: topic.rank || index + 1,
         title: title,
         abstract: topic.abstract || topic.desc || '',
-        hot: topic.hot || topic.hotValue || '',
-        hotValue: topic.hot || topic.hotValue || '',
+        hot: formatHotValue(hotValue),
+        hotValue: hotValue,
         eventTimeline: topic.abstract || topic.desc || '',
         ideas: ideas
       };

@@ -1,14 +1,24 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-01-08T03:19:05.248Z",
+  "lastUpdated": "2026-01-08T03:26:05.373Z",
   "statistics": {
-    "totalReports": 1,
-    "totalHotTopics": 15,
-    "totalIdeas": 30,
-    "excellentIdeas": 7,
-    "goodIdeas": 23
+    "totalReports": 2,
+    "totalHotTopics": 65,
+    "totalIdeas": 102,
+    "excellentIdeas": 33,
+    "goodIdeas": 69
   },
   "reports": [
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "file": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html",
+      "hotTopicsCount": 50,
+      "ideasCount": 72,
+      "excellentCount": 26,
+      "goodCount": 46
+    },
     {
       "date": "2026-01-07",
       "file": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html",
@@ -528,6 +538,1269 @@
       "interestingScore": 58,
       "usefulScore": 14,
       "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "美国退出66个国际组织",
+      "hotTopicRank": 1,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 84,
+      "interestingScore": 73,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "美国退出66个国际组织",
+      "hotTopicRank": 1,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 74,
+      "interestingScore": 58,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "台军F16坠海飞行员最后通话曝光",
+      "hotTopicRank": 2,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 72,
+      "interestingScore": 59,
+      "usefulScore": 13,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "科技创新活力涌动",
+      "hotTopicRank": 3,
+      "coreFeatures": [
+        "产品对比和评测",
+        "使用技巧和教程",
+        "问题诊断和解决",
+        "最新资讯和推荐"
+      ],
+      "targetUsers": "18-35岁科技爱好者、数码产品用户、早期采用者",
+      "score": 79,
+      "interestingScore": 67,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "科技创新活力涌动",
+      "hotTopicRank": 3,
+      "coreFeatures": [
+        "产品对比和评测",
+        "使用技巧和教程",
+        "问题诊断和解决"
+      ],
+      "targetUsers": "18-35岁科技爱好者、数码产品用户、早期采用者",
+      "score": 79,
+      "interestingScore": 69,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "女子选车牌摇到豹子号苏A0000A",
+      "hotTopicRank": 4,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 90,
+      "interestingScore": 76,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "周恩来总理逝世50周年",
+      "hotTopicRank": 5,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 82,
+      "interestingScore": 66,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "周恩来总理逝世50周年",
+      "hotTopicRank": 5,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 90,
+      "interestingScore": 79,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "台军F16坠海画面公布",
+      "hotTopicRank": 6,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 69,
+      "interestingScore": 58,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "台军F16坠海画面公布",
+      "hotTopicRank": 6,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 70,
+      "interestingScore": 56,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "国防部：防止日本军国主义借尸还魂",
+      "hotTopicRank": 7,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 72,
+      "interestingScore": 56,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "国防部：防止日本军国主义借尸还魂",
+      "hotTopicRank": 7,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 88,
+      "interestingScore": 74,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "《石灰吟》里是粉身碎骨还是粉骨碎身",
+      "hotTopicRank": 8,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 68,
+      "interestingScore": 51,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "中央“点名”住房公积金释放什么信号",
+      "hotTopicRank": 9,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 76,
+      "interestingScore": 66,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "WTT多哈冠军赛今日国乒赛程",
+      "hotTopicRank": 10,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 82,
+      "interestingScore": 66,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "WTT多哈冠军赛今日国乒赛程",
+      "hotTopicRank": 10,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 81,
+      "interestingScore": 70,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "官方辟谣日照并入临沂",
+      "hotTopicRank": 11,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 73,
+      "interestingScore": 55,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "妈妈用歌声把哄睡时闯入的爸爸赶走",
+      "hotTopicRank": 12,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 70,
+      "interestingScore": 60,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "40元一碗还亏损 和府捞面冤吗",
+      "hotTopicRank": 13,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 65,
+      "interestingScore": 54,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "三九的第一天",
+      "hotTopicRank": 14,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 84,
+      "interestingScore": 72,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "三九的第一天",
+      "hotTopicRank": 14,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 93,
+      "interestingScore": 76,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "美国宣布退出多项国际气候治理机制",
+      "hotTopicRank": 15,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 63,
+      "interestingScore": 50,
+      "usefulScore": 13,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "毛戈平家族等拟套现超14亿港元",
+      "hotTopicRank": 16,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 73,
+      "interestingScore": 54,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "雷军晒超强钢发明专利证书",
+      "hotTopicRank": 17,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 78,
+      "interestingScore": 66,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "阿姨趁没人剪走店主羽绒服布料你咋看",
+      "hotTopicRank": 18,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 86,
+      "interestingScore": 75,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "出口管制锁住日本扩武迷梦",
+      "hotTopicRank": 19,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 70,
+      "interestingScore": 58,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "“三九天”为啥最冷",
+      "hotTopicRank": 20,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 84,
+      "interestingScore": 73,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "“三九天”为啥最冷",
+      "hotTopicRank": 20,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 68,
+      "interestingScore": 57,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "金价已在历史高位 央行为何还在买",
+      "hotTopicRank": 21,
+      "coreFeatures": [
+        "实时行情监控和提醒",
+        "专业数据解读和分析",
+        "投资组合优化建议"
+      ],
+      "targetUsers": "25-45岁白领、投资理财人群、关注经济走势的用户",
+      "score": 65,
+      "interestingScore": 50,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "金价已在历史高位 央行为何还在买",
+      "hotTopicRank": 21,
+      "coreFeatures": [
+        "实时行情监控和提醒",
+        "专业数据解读和分析",
+        "投资组合优化建议"
+      ],
+      "targetUsers": "25-45岁白领、投资理财人群、关注经济走势的用户",
+      "score": 69,
+      "interestingScore": 59,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "马斯克：中国AI算力领先世界",
+      "hotTopicRank": 22,
+      "coreFeatures": [
+        "产品对比和评测",
+        "使用技巧和教程",
+        "问题诊断和解决",
+        "最新资讯和推荐"
+      ],
+      "targetUsers": "18-35岁科技爱好者、数码产品用户、早期采用者",
+      "score": 85,
+      "interestingScore": 69,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "马斯克：中国AI算力领先世界",
+      "hotTopicRank": 22,
+      "coreFeatures": [
+        "产品对比和评测",
+        "使用技巧和教程",
+        "问题诊断和解决"
+      ],
+      "targetUsers": "18-35岁科技爱好者、数码产品用户、早期采用者",
+      "score": 71,
+      "interestingScore": 52,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "《寻秦记》票房和口碑不可兼得吗",
+      "hotTopicRank": 23,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 72,
+      "interestingScore": 58,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "《寻秦记》票房和口碑不可兼得吗",
+      "hotTopicRank": 23,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 71,
+      "interestingScore": 59,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "贵金属上演跳水",
+      "hotTopicRank": 24,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 74,
+      "interestingScore": 58,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "男子在国外发现患癌选择回国治疗",
+      "hotTopicRank": 25,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 96,
+      "interestingScore": 77,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "加拿大总理卡尼将访华",
+      "hotTopicRank": 26,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 91,
+      "interestingScore": 75,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "媒体：日本最应算清地区和平这本大账",
+      "hotTopicRank": 27,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 65,
+      "interestingScore": 50,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "媒体：日本最应算清地区和平这本大账",
+      "hotTopicRank": 27,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 79,
+      "interestingScore": 67,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "“长寿运动配方”公布",
+      "hotTopicRank": 28,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 75,
+      "interestingScore": 56,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "有哪些手段能让房价止跌回稳",
+      "hotTopicRank": 29,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 71,
+      "interestingScore": 52,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "有哪些手段能让房价止跌回稳",
+      "hotTopicRank": 29,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 68,
+      "interestingScore": 53,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "小米前高管王腾成立新公司",
+      "hotTopicRank": 30,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 69,
+      "interestingScore": 59,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "小米前高管王腾成立新公司",
+      "hotTopicRank": 30,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 81,
+      "interestingScore": 71,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "冬季尽量少吃这些“补品”",
+      "hotTopicRank": 31,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 70,
+      "interestingScore": 55,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "4万现金受潮损坏只换回1万7",
+      "hotTopicRank": 32,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 84,
+      "interestingScore": 67,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "2名山东省管干部跨市履新",
+      "hotTopicRank": 33,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 93,
+      "interestingScore": 79,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "2名山东省管干部跨市履新",
+      "hotTopicRank": 33,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 77,
+      "interestingScore": 66,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "中国留学生讲述“日本梅毒扩散”",
+      "hotTopicRank": 34,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 93,
+      "interestingScore": 75,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "中国留学生讲述“日本梅毒扩散”",
+      "hotTopicRank": 34,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 74,
+      "interestingScore": 56,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "哈尔滨天下第一“听劝”",
+      "hotTopicRank": 35,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 68,
+      "interestingScore": 57,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "哈尔滨天下第一“听劝”",
+      "hotTopicRank": 35,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 64,
+      "interestingScore": 54,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "业主与物业纠纷被民警强制传唤受伤",
+      "hotTopicRank": 36,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 72,
+      "interestingScore": 56,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "如何看待俄乌无人机大战更加激烈",
+      "hotTopicRank": 37,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 69,
+      "interestingScore": 55,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "新疆骆驼队抵达洛阳",
+      "hotTopicRank": 38,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 69,
+      "interestingScore": 52,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "美国股市：特朗普密集发帖冲击市场",
+      "hotTopicRank": 39,
+      "coreFeatures": [
+        "实时行情监控和提醒",
+        "专业数据解读和分析",
+        "投资组合优化建议"
+      ],
+      "targetUsers": "25-45岁白领、投资理财人群、关注经济走势的用户",
+      "score": 89,
+      "interestingScore": 77,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "特朗普质疑北约在美需要时会否支持",
+      "hotTopicRank": 40,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 80,
+      "interestingScore": 66,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "多架战机遨游空天氛围感拉满",
+      "hotTopicRank": 41,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 84,
+      "interestingScore": 70,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "多架战机遨游空天氛围感拉满",
+      "hotTopicRank": 41,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 74,
+      "interestingScore": 60,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "“手打奶茶”闹剧不能重演",
+      "hotTopicRank": 42,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 74,
+      "interestingScore": 64,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "郭正亮还原台空军F-16V事故全貌",
+      "hotTopicRank": 43,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 81,
+      "interestingScore": 67,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "郭正亮还原台空军F-16V事故全貌",
+      "hotTopicRank": 43,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 80,
+      "interestingScore": 61,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "无锡A级景区对永州市民免费",
+      "hotTopicRank": 44,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 73,
+      "interestingScore": 59,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "萌宝们在幼儿园煮大肘子",
+      "hotTopicRank": 45,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 69,
+      "interestingScore": 51,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "尚界Z7官图发布 剑指小米SU7",
+      "hotTopicRank": 46,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 90,
+      "interestingScore": 72,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "尚界Z7官图发布 剑指小米SU7",
+      "hotTopicRank": 46,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 77,
+      "interestingScore": 63,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "张常宁官宣退役",
+      "hotTopicRank": 47,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 83,
+      "interestingScore": 71,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "美称2027美军事预算应是1.5万亿美元",
+      "hotTopicRank": 48,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 65,
+      "interestingScore": 54,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "美称2027美军事预算应是1.5万亿美元",
+      "hotTopicRank": 48,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 74,
+      "interestingScore": 63,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "国防部：菲把渔民当作煽宣炒作工具",
+      "hotTopicRank": 49,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化",
+        "用户互动和分享"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 76,
+      "interestingScore": 64,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "国防部：菲把渔民当作煽宣炒作工具",
+      "hotTopicRank": 49,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 90,
+      "interestingScore": 78,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
+    },
+    {
+      "date": "2026-01-08",
+      "time": "11",
+      "timeDisplay": "11:00",
+      "hotTopicTitle": "专家谈中小学减考令",
+      "hotTopicRank": 50,
+      "coreFeatures": [
+        "信息聚合和筛选",
+        "个性化推荐",
+        "数据分析和可视化"
+      ],
+      "targetUsers": "对相关领域感兴趣的普通用户",
+      "score": 76,
+      "interestingScore": 57,
+      "usefulScore": 19,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-08-11.html"
     }
   ]
 }

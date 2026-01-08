@@ -155,6 +155,20 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
         .badge-good { background: #ffc107; color: #333; }
 
         .rank-badge { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; border-radius: 50%; background: #667eea; color: white; font-weight: bold; margin-right: 10px; }
+
+        /* 热卖商品样式 */
+        .products-section { background: #fff9f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ff6b6b; }
+        .products-section h4 { margin-top: 0; color: #ff6b6b; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
+        .product-card { background: white; padding: 15px; border-radius: 8px; border: 2px solid #ffe0e0; transition: all 0.3s; }
+        .product-card:hover { border-color: #ff6b6b; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255,107,107,0.2); }
+        .product-name { font-size: 16px; font-weight: bold; color: #333; margin-bottom: 10px; }
+        .product-reason { font-size: 14px; color: #666; margin-bottom: 8px; line-height: 1.5; }
+        .product-target { font-size: 13px; color: #888; margin-bottom: 8px; }
+        .product-heat { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+        .product-heat.high { background: #ff6b6b; color: white; }
+        .product-heat.medium { background: #ffd93d; color: #333; }
+        .product-heat.low { background: #dfe6e9; color: #666; }
     </style>
 </head>
 <body>
@@ -203,6 +217,26 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
                         usefulScore: 15,
                         totalScore: 80,
                         analysis: "评分分析说明"
+                    }
+                ],
+                hotProducts: [
+                    {
+                        name: "商品名称1",
+                        reason: "推荐理由...",
+                        targetUsers: "目标人群",
+                        heatLevel: "高"
+                    },
+                    {
+                        name: "商品名称2",
+                        reason: "推荐理由...",
+                        targetUsers: "目标人群",
+                        heatLevel: "中"
+                    },
+                    {
+                        name: "商品名称3",
+                        reason: "推荐理由...",
+                        targetUsers: "目标人群",
+                        heatLevel: "高"
                     }
                 ]
             }
@@ -256,6 +290,22 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
                     `;
                 });
 
+                // 生成热卖商品HTML
+                let productsHTML = '';
+                if (topic.hotProducts && topic.hotProducts.length > 0) {
+                    productsHTML = topic.hotProducts.map(product => {
+                        const heatClass = product.heatLevel === '高' ? 'high' : (product.heatLevel === '中' ? 'medium' : 'low');
+                        return `
+                            <div class="product-card">
+                                <div class="product-name">${product.name}</div>
+                                <div class="product-reason">${product.reason}</div>
+                                <div class="product-target">👤 ${product.targetUsers}</div>
+                                <span class="product-heat ${heatClass}">热度: ${product.heatLevel}</span>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
                 topicDiv.innerHTML = `
                     <div class="hot-header">
                         <div class="hot-title"><span class="rank-badge">${topic.rank}</span>${topic.title}</div>
@@ -268,6 +318,16 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
                             <h4>事件脉络</h4>
                             <p>${topic.eventTimeline}</p>
                         </div>
+
+                        ${productsHTML ? `
+                        <div class="products-section">
+                            <h4>🔥 热卖商品推荐</h4>
+                            <div class="products-grid">
+                                ${productsHTML}
+                            </div>
+                        </div>
+                        ` : ''}
+
                         <h4>产品创意</h4>
                         <div class="ideas-grid">
                             ${ideasHTML}
@@ -300,7 +360,7 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
 3. 良好创意(60-79分)使用黄色渐变背景
 4. 普通创意(<60分)使用灰色边框
 5. 在顶部展示统计数据：总热点数、总创意数、优秀创意数、良好创意数
-6. 每个热点包含：排名、标题、热度、事件脉络、产品创意列表
+6. 每个热点包含：排名、标题、热度、事件脉络、**热卖商品推荐**、产品创意列表
 
 ## 执行步骤
 
@@ -338,6 +398,16 @@ curl -s "https://apis.tianapi.com/toutiaohot/index?key=207a781b0b0bbcbf42c5a6aa8
    - 生成1-3个结构化的产品创意
    - **不要生成"XX助手"、"XX管家"这种模板化名称**
    - 创意名称要具体、有吸引力、符合热搜话题特点
+
+   **同时分析可能热卖的商品（每个热搜话题3种）：**
+   - 基于热搜话题的特点和用户需求
+   - 分析在该话题热度下可能畅销的商品
+   - 考虑商品的相关性、时效性、购买动机
+   - 商品格式：
+     - 商品名称：具体商品名
+     - 推荐理由：为什么这个商品会热卖（2-3句话）
+     - 目标人群：谁会购买这个商品
+     - 预估热度：高/中/低
 
 5. **生成HTML报告（覆盖旧文件）**
    - 将所有分析结果整合到HTML模板中

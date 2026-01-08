@@ -90,15 +90,13 @@ async function runTask() {
     const filename = generateFilename(config.filenameTemplate, timestamp);
     console.log(`📝 文件名: ${filename}`);
 
-    // 2. 调用 Claude Code skill
-    const prompt = '分析今天的头条热搜产品机会';
-    const success = executeCommand(
-      `"${config.claudeCodePath}" -p --permission-mode dontAsk "${prompt}"`,
-      '执行 Claude Code skill'
-    );
+    // 2. 生成分析报告
+    console.log('🤖 使用自动化脚本生成报告...');
+    const generateReport = require('./generate-report');
+    const result = await generateReport.main();
 
-    if (!success) {
-      throw new Error('Claude Code skill 执行失败');
+    if (!result.success) {
+      throw new Error('报告生成失败');
     }
 
     // 检查生成的文件（在根目录，不在reports子目录中）

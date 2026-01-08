@@ -1,0 +1,21 @@
+{
+  "site": {
+    "title": "头条热搜产品创意分析",
+    "description": "每日分析头条热搜，发现产品机会",
+    "author": "AI产品经理黄叔",
+    "language": "zh-CN"
+  },
+  "paths": {
+    "reports": "reports",
+    "website": "website",
+    "data": "data"
+  },
+  "deployment": {
+    "platform": "vercel",
+    "githubRepo": "https://github.com/ablink123/toutiaohot-analysis.git"
+  },
+  "scoring": {
+    "excellent": 80,
+    "good": 60
+  }
+}

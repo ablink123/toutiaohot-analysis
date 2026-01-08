@@ -1,0 +1,533 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-01-07T16:56:10.283Z",
+  "statistics": {
+    "totalReports": 1,
+    "totalHotTopics": 15,
+    "totalIdeas": 30,
+    "excellentIdeas": 7,
+    "goodIdeas": 23
+  },
+  "reports": [
+    {
+      "date": "2026-01-07",
+      "file": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html",
+      "hotTopicsCount": 15,
+      "ideasCount": 30,
+      "excellentCount": 7,
+      "goodCount": 23
+    }
+  ],
+  "allIdeas": [
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "雷军晒超强钢发明专利证书",
+      "hotTopicRank": 1,
+      "ideaName": "专利验证平台",
+      "coreFeatures": [
+        "专利信息实时查询与验证",
+        "企业技术实力可视化展示",
+        "专利技术对比分析功能",
+        "行业技术趋势追踪报告"
+      ],
+      "targetUsers": "投资人、技术研发人员、产品经理、科技媒体从业者，需要快速验证企业技术宣称真实性的专业人士",
+      "score": 80,
+      "interestingScore": 65,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "雷军晒超强钢发明专利证书",
+      "hotTopicRank": 1,
+      "ideaName": "材料技术科普社区",
+      "coreFeatures": [
+        "硬核材料知识科普动画",
+        "材料性能可视化对比工具",
+        "用户材料应用场景分享",
+        "专家问答与直播互动"
+      ],
+      "targetUsers": "科技爱好者、学生、工程师、汽车从业者，对新材料技术感兴趣的广泛用户群体",
+      "score": 74,
+      "interestingScore": 62,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "河南多地夜空现'神秘光点'",
+      "hotTopicRank": 2,
+      "ideaName": "天文现象实时预报App",
+      "coreFeatures": [
+        "卫星过境实时预报与推送",
+        "AR实景导航指引观测",
+        "天文现象知识库",
+        "天文爱好者社区"
+      ],
+      "targetUsers": "天文爱好者、摄影师、学生、亲子家庭，对天文现象感兴趣的大众用户",
+      "score": 88,
+      "interestingScore": 70,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "河南多地夜空现'神秘光点'",
+      "hotTopicRank": 2,
+      "ideaName": "星空打卡社交平台",
+      "coreFeatures": [
+        "LBS星空打卡签到",
+        "天文摄影作品展示",
+        "同城观星活动组局",
+        "稀有天象猎人成就系统"
+      ],
+      "targetUsers": "年轻用户、摄影爱好者、户外运动爱好者，追求新奇体验的社交活跃用户",
+      "score": 82,
+      "interestingScore": 68,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "iPhone 13全系开启限时半价换电池",
+      "hotTopicRank": 3,
+      "ideaName": "手机健康度监测助手",
+      "coreFeatures": [
+        "多设备电池健康实时监测",
+        "电池衰减预警与保养建议",
+        "授权维修点查找与比价",
+        "维修服务预约与评价"
+      ],
+      "targetUsers": "iPhone及安卓用户、商务人士、对设备健康度关注的广泛用户群体",
+      "score": 76,
+      "interestingScore": 58,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "iPhone 13全系开启限时半价换电池",
+      "hotTopicRank": 3,
+      "ideaName": "二手设备价值评估平台",
+      "coreFeatures": [
+        "AI设备成色检测评估",
+        "电池健康对价值影响分析",
+        "维修后增值预估",
+        "交易撮合服务"
+      ],
+      "targetUsers": "二手手机买卖双方、手机回收商、需要换机的用户",
+      "score": 70,
+      "interestingScore": 54,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "我国核聚变再现突破",
+      "hotTopicRank": 4,
+      "ideaName": "硬核科技科普互动平台",
+      "coreFeatures": [
+        "前沿科技可视化解读",
+        "科学家在线直播答疑",
+        "科技进展里程碑时间轴",
+        "用户科技知识挑战赛"
+      ],
+      "targetUsers": "学生、科技爱好者、家长、教育工作者，对前沿科技感兴趣的广泛群体",
+      "score": 82,
+      "interestingScore": 66,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "我国核聚变再现突破",
+      "hotTopicRank": 4,
+      "ideaName": "清洁能源投资追踪工具",
+      "coreFeatures": [
+        "核聚变及其他清洁能源技术进展追踪",
+        "相关上市公司产业链图谱",
+        "投资机会智能筛选",
+        "行业专家观点聚合"
+      ],
+      "targetUsers": "投资者、行业分析师、科技产业从业者，关注清洁能源投资机会的专业人士",
+      "score": 73,
+      "interestingScore": 56,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "歼-35绿皮机新年首飞",
+      "hotTopicRank": 5,
+      "ideaName": "军事装备百科图谱",
+      "coreFeatures": [
+        "全球武器装备数据库",
+        "AR/VR装备展示体验",
+        "装备发展史时间轴",
+        "军迷社区与讨论区"
+      ],
+      "targetUsers": "军迷、模型爱好者、学生、国防教育受众，对军事装备感兴趣的广泛用户",
+      "score": 86,
+      "interestingScore": 72,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "歼-35绿皮机新年首飞",
+      "hotTopicRank": 5,
+      "ideaName": "国防教育互动学习平台",
+      "coreFeatures": [
+        "武器装备知识闯关游戏",
+        "国防历史沉浸式课程",
+        "VR虚拟军营体验",
+        "学生国防素养评估"
+      ],
+      "targetUsers": "中小学生、家长、学校、国防教育机构",
+      "score": 80,
+      "interestingScore": 64,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "2026年哪些行业能赚到钱",
+      "hotTopicRank": 6,
+      "ideaName": "投资机会智能聚合平台",
+      "coreFeatures": [
+        "多机构观点智能聚合",
+        "行业数据可视化分析",
+        "个性化投资机会推荐",
+        "投资组合回测工具"
+      ],
+      "targetUsers": "个人投资者、理财顾问、金融从业者，需要高效获取投资建议的专业人士",
+      "score": 77,
+      "interestingScore": 60,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "2026年哪些行业能赚到钱",
+      "hotTopicRank": 6,
+      "ideaName": "行业趋势预测社区",
+      "coreFeatures": [
+        "用户行业预测发布与验证",
+        "预测准确率排行榜",
+        "专家观点与草根智慧对比",
+        "趋势追踪与提醒"
+      ],
+      "targetUsers": "投资者、行业从业者、分析师，对行业趋势感兴趣的知识型用户",
+      "score": 76,
+      "interestingScore": 64,
+      "usefulScore": 12,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "山东一闲置水井突喷热水变'温泉'",
+      "hotTopicRank": 7,
+      "ideaName": "奇观地理探索App",
+      "coreFeatures": [
+        "LBS奇观地点发现",
+        "地质现象知识科普",
+        "奇观打卡与分享",
+        "同城奇观猎人组队"
+      ],
+      "targetUsers": "旅行爱好者、户外运动爱好者、摄影爱好者、学生，追求新奇体验的年轻用户",
+      "score": 81,
+      "interestingScore": 68,
+      "usefulScore": 13,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "山东一闲置水井突喷热水变'温泉'",
+      "hotTopicRank": 7,
+      "ideaName": "地质科普教育平台",
+      "coreFeatures": [
+        "地质现象AR可视化",
+        "专家在线科普直播",
+        "地质公园虚拟游览",
+        "学生地质实践活动对接"
+      ],
+      "targetUsers": "学生、家长、学校、科普爱好者，对地球科学感兴趣的广泛群体",
+      "score": 73,
+      "interestingScore": 58,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "八部门：推动大模型在制造业深度应用",
+      "hotTopicRank": 8,
+      "ideaName": "AI+制造案例库",
+      "coreFeatures": [
+        "制造业AI应用案例库",
+        "解决方案供应商匹配",
+        "ROI计算工具",
+        "行业专家咨询对接"
+      ],
+      "targetUsers": "制造业企业、AI技术供应商、咨询顾问，需要AI赋能的传统制造业从业者",
+      "score": 70,
+      "interestingScore": 52,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "八部门：推动大模型在制造业深度应用",
+      "hotTopicRank": 8,
+      "ideaName": "制造业AI人才平台",
+      "coreFeatures": [
+        "AI+制造人才招聘",
+        "技能认证与培训",
+        "项目众包对接",
+        "行业薪资报告"
+      ],
+      "targetUsers": "制造业企业、AI工程师、求职者，制造业数字化转型相关从业者",
+      "score": 66,
+      "interestingScore": 50,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "杭州股民2天赚到1个月工资",
+      "hotTopicRank": 9,
+      "ideaName": "投资风险模拟教育工具",
+      "coreFeatures": [
+        "真实历史数据回放模拟",
+        "不同策略收益风险对比",
+        "投资心理测试与分析",
+        "风险承受能力评估"
+      ],
+      "targetUsers": "新手投资者、学生、理财教育受众，需要建立正确投资观的用户",
+      "score": 79,
+      "interestingScore": 62,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "杭州股民2天赚到1个月工资",
+      "hotTopicRank": 9,
+      "ideaName": "投资收益社交分享平台",
+      "coreFeatures": [
+        "匿名收益分享与排行",
+        "投资策略复盘",
+        "跟投功能（合规前提下）",
+        "投资者社群"
+      ],
+      "targetUsers": "股民、理财爱好者，有一定投资经验并愿意分享的社交型用户",
+      "score": 77,
+      "interestingScore": 66,
+      "usefulScore": 11,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "阿姨趁没人剪走店主羽绒服布料",
+      "hotTopicRank": 10,
+      "ideaName": "商户AI安防助手",
+      "coreFeatures": [
+        "异常行为智能识别",
+        "实时预警推送",
+        "低成本云存储方案",
+        "证据快速导出与报警"
+      ],
+      "targetUsers": "中小商户、店主、市场管理者，需要安防解决方案的小微企业主",
+      "score": 74,
+      "interestingScore": 56,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "阿姨趁没人剪走店主羽绒服布料",
+      "hotTopicRank": 10,
+      "ideaName": "社会现象讨论社区",
+      "coreFeatures": [
+        "热点事件多维度分析",
+        "理性讨论引导机制",
+        "专家观点解读",
+        "社会心理学科普"
+      ],
+      "targetUsers": "关注社会议题的用户、学生、媒体从业者、研究人员，对社会现象有思考深度的用户",
+      "score": 70,
+      "interestingScore": 60,
+      "usefulScore": 10,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "微信辟谣'好友太多会被封'",
+      "hotTopicRank": 11,
+      "ideaName": "社交媒体管理工具",
+      "coreFeatures": [
+        "多平台账号统一管理",
+        "好友/粉丝健康度分析",
+        "内容发布与互动统计",
+        "账号安全监测"
+      ],
+      "targetUsers": "自媒体运营者、KOL、营销人员，重度社交媒体用户",
+      "score": 70,
+      "interestingScore": 54,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "微信辟谣'好友太多会被封'",
+      "hotTopicRank": 11,
+      "ideaName": "谣言粉碎机社区",
+      "coreFeatures": [
+        "用户提交谣言快速验证",
+        "官方辟信聚合",
+        "谣言传播路径追踪",
+        "防诈骗教育内容"
+      ],
+      "targetUsers": "中老年用户、家长、所有社交媒体用户，易受谣言影响的群体",
+      "score": 72,
+      "interestingScore": 58,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "男子被狗咬伤次日狗身亡紧急打针",
+      "hotTopicRank": 12,
+      "ideaName": "宠物健康档案平台",
+      "coreFeatures": [
+        "宠物疫苗接种提醒",
+        "健康档案云端存储",
+        "宠物保险对接",
+        "宠物医院预约"
+      ],
+      "targetUsers": "宠物主、宠物医院、宠物店，养宠物的城市用户",
+      "score": 69,
+      "interestingScore": 52,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "男子被狗咬伤次日狗身亡紧急打针",
+      "hotTopicRank": 12,
+      "ideaName": "应急医疗知识小程序",
+      "coreFeatures": [
+        "常见意外应急指南",
+        "附近医院/疫苗点快速查找",
+        "急救知识视频教程",
+        "紧急联系人一键通知"
+      ],
+      "targetUsers": "大众用户、户外工作者、家长，需要应急医疗知识的广泛群体",
+      "score": 68,
+      "interestingScore": 50,
+      "usefulScore": 18,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "三星警告：所有电子产品面临涨价",
+      "hotTopicRank": 13,
+      "ideaName": "电子产品价格追踪工具",
+      "coreFeatures": [
+        "全渠道价格历史追踪",
+        "降价提醒",
+        "性价比分析",
+        "购买时机建议"
+      ],
+      "targetUsers": "消费者、数码爱好者，计划购买电子产品的用户",
+      "score": 70,
+      "interestingScore": 54,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "三星警告：所有电子产品面临涨价",
+      "hotTopicRank": 13,
+      "ideaName": "企业成本管理SaaS",
+      "coreFeatures": [
+        "供应链价格监控",
+        "成本预警",
+        "替代方案推荐",
+        "采购决策辅助"
+      ],
+      "targetUsers": "制造业企业、采购商、供应链管理者",
+      "score": 65,
+      "interestingScore": 48,
+      "usefulScore": 17,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "广东一地官宣：二孩奖1万三孩奖3万",
+      "hotTopicRank": 14,
+      "ideaName": "生育政策聚合平台",
+      "coreFeatures": [
+        "各地生育政策聚合",
+        "福利申领指南",
+        "生育成本计算器",
+        "政策更新推送"
+      ],
+      "targetUsers": "育龄夫妇、准父母、家庭规划用户，需要了解生育政策的广泛群体",
+      "score": 68,
+      "interestingScore": 52,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "广东一地官宣：二孩奖1万三孩奖3万",
+      "hotTopicRank": 14,
+      "ideaName": "育儿成本优化助手",
+      "coreFeatures": [
+        "育儿支出跟踪与分析",
+        "补贴与福利自动匹配",
+        "优惠信息推荐",
+        "育儿成本社区分享"
+      ],
+      "targetUsers": "年轻父母、准父母，关注育儿成本的家庭",
+      "score": 71,
+      "interestingScore": 56,
+      "usefulScore": 15,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "明天就进入'三九'了",
+      "hotTopicRank": 15,
+      "ideaName": "智能健康提醒助手",
+      "coreFeatures": [
+        "天气变化智能提醒",
+        "健康风险预警",
+        "个性化养生建议",
+        "家人关怀推送"
+      ],
+      "targetUsers": "中老年用户、健康关注者、为父母担忧的子女，关注健康的广泛用户",
+      "score": 66,
+      "interestingScore": 50,
+      "usefulScore": 16,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    },
+    {
+      "date": "2026-01-07",
+      "hotTopicTitle": "明天就进入'三九'了",
+      "hotTopicRank": 15,
+      "ideaName": "节气养生社区",
+      "coreFeatures": [
+        "二十四节气养生知识",
+        "应季食谱推荐",
+        "养生打卡挑战",
+        "专家在线指导"
+      ],
+      "targetUsers": "中医养生爱好者、中老年用户、追求健康生活方式的用户",
+      "score": 72,
+      "interestingScore": 58,
+      "usefulScore": 14,
+      "reportPath": "reports\\2026\\01\\toutiaohot-analysis-2026-01-07.html"
+    }
+  ]
+}

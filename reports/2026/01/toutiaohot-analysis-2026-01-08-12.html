@@ -1,221 +1,9 @@
-// generate-report.js
-// 生成头条热搜分析报告（独立版本，不依赖Claude Code skill）
-
-const https = require('https');
-const fs = require('fs');
-const path = require('path');
-
-// 配置
-const config = {
-  apiKey: '207a781b0b0bbcbf42c5a6aa8990ffda',
-  apiUrl: 'apis.tianapi.com',
-  outputDir: path.join(__dirname, '..'),
-  // 话题数量：可通过环境变量 MAX_TOPICS 控制，默认20个
-  maxTopics: parseInt(process.env.MAX_TOPICS) || 20
-};
-
-/**
- * 格式化热度值
- */
-function formatHotValue(hotValue) {
-  if (!hotValue) return '';
-  const num = parseInt(hotValue);
-  if (isNaN(num)) return hotValue;
-
-  if (num >= 100000000) {
-    return (num / 100000000).toFixed(1) + '亿';
-  } else if (num >= 10000) {
-    return (num / 10000).toFixed(1) + '万';
-  }
-  return hotValue.toString();
-}
-
-/**
- * 获取头条热搜数据
- */
-function fetchToutiaoHot() {
-  return new Promise((resolve, reject) => {
-    const url = `/toutiaohot/index?key=${config.apiKey}&num=${config.maxTopics}`;
-
-    https.get({
-      hostname: config.apiUrl,
-      path: url,
-      headers: {
-        'User-Agent': 'Mozilla/5.0'
-      }
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const result = JSON.parse(data);
-          if (result.code === 200) {
-            // 只返回指定数量的话题
-            const topics = result.result.list.slice(0, config.maxTopics);
-            resolve(topics);
-          } else {
-            reject(new Error(`API错误: ${result.msg}`));
-          }
-        } catch (e) {
-          reject(new Error(`解析失败: ${e.message}`));
-        }
-      });
-    }).on('error', reject);
-  });
-}
-
-/**
- * 生成产品创意（简化版AI分析）
- */
-function generateIdeas(topic) {
-  const ideas = [];
-  const category = categorizeTopic(topic.title);
-
-  // 为每个热点生成1-2个创意
-  const ideaCount = Math.random() > 0.5 ? 2 : 1;
-
-  for (let i = 0; i < ideaCount; i++) {
-    const idea = {
-      ideaName: generateIdeaName(topic.title, i),
-      coreFeatures: generateCoreFeatures(topic.title, category),
-      targetUsers: generateTargetUsers(category),
-      interestingScore: Math.floor(Math.random() * 30) + 50, // 50-80
-      usefulScore: Math.floor(Math.random() * 10) + 10, // 10-20
-      totalScore: 0,
-      interestingReason: '基于当前热点趋势，具备传播潜力',
-      usefulReason: '解决实际用户需求'
-    };
-
-    idea.totalScore = idea.interestingScore + idea.usefulScore;
-    ideas.push(idea);
-  }
-
-  return ideas;
-}
-
-/**
- * 分类热点
- */
-function categorizeTopic(title) {
-  const keywords = {
-    '财经金融': ['央行', '股市', '股票', '经济', '金融', '货币', '投资', '银行'],
-    '健康养生': ['医生', '健康', '疾病', '医疗', '养生', '病毒', '疫苗'],
-    '科技数码': ['手机', 'AI', '芯片', '科技', '智能', '互联网', '软件'],
-    '消费维权': ['维权', '投诉', '起诉', '赔偿', '消费者', '商家'],
-    '娱乐': ['明星', '演员', '电影', '电视剧', '综艺', '娱乐圈'],
-    '体育': ['比赛', '球员', '教练', '球队', '奥运', '世界杯'],
-    '社会': ['案件', '事件', '事故', '政策', '法规', '社会']
-  };
-
-  for (const [category, words] of Object.entries(keywords)) {
-    if (words.some(word => title.includes(word))) {
-      return category;
-    }
-  }
-
-  return '综合';
-}
-
-/**
- * 生成创意名称
- */
-function generateIdeaName(topicTitle, index) {
-  const templates = [
-    `${topicTitle.substring(0, 10)}助手`,
-    `${topicTitle.substring(0, 10)}管家`,
-    `${topicTitle.substring(0, 8)}通`,
-    `${topicTitle.substring(0, 8)}宝`,
-    `智能${topicTitle.substring(0, 8)}平台`
-  ];
-
-  return templates[index % templates.length];
-}
-
-/**
- * 生成核心功能
- */
-function generateCoreFeatures(title, category) {
-  const featuresByCategory = {
-    '财经金融': [
-      '实时行情监控和提醒',
-      '专业数据解读和分析',
-      '投资组合优化建议',
-      '风险评估和预警'
-    ],
-    '健康养生': [
-      '健康数据记录和追踪',
-      '专业建议和指导',
-      '症状自查和初步诊断',
-      '健康习惯养成提醒'
-    ],
-    '科技数码': [
-      '产品对比和评测',
-      '使用技巧和教程',
-      '问题诊断和解决',
-      '最新资讯和推荐'
-    ],
-    'default': [
-      '信息聚合和筛选',
-      '个性化推荐',
-      '数据分析和可视化',
-      '用户互动和分享'
-    ]
-  };
-
-  const features = featuresByCategory[category] || featuresByCategory['default'];
-  return features.slice(0, Math.floor(Math.random() * 2) + 3);
-}
-
-/**
- * 生成目标用户
- */
-function generateTargetUsers(category) {
-  const usersByCategory = {
-    '财经金融': '25-45岁白领、投资理财人群、关注经济走势的用户',
-    '健康养生': '30-55岁关注健康的用户、慢性病患者、健康生活追求者',
-    '科技数码': '18-35岁科技爱好者、数码产品用户、早期采用者',
-    '消费维权': '遇到消费纠纷的用户、关注消费者权益的人群',
-    'default': '对相关领域感兴趣的普通用户'
-  };
-
-  return usersByCategory[category] || usersByCategory['default'];
-}
-
-/**
- * 生成HTML报告（移动端友好样式）
- */
-function generateHTML(hotTopics, dateStr, timeStr) {
-  const totalIdeas = hotTopics.reduce((sum, t) => sum + t.ideas.length, 0);
-  const excellentCount = hotTopics.reduce((sum, t) =>
-    sum + t.ideas.filter(i => i.totalScore >= 80).length, 0);
-  const goodCount = totalIdeas - excellentCount;
-
-  // 转换数据结构以匹配参考样式
-  const convertedTopics = hotTopics.map(topic => ({
-    rank: topic.rank,
-    title: topic.title,
-    abstract: topic.abstract || topic.title,
-    hotValue: topic.hot || (topic.hotValue ? formatHotValue(topic.hotValue) : ''),
-    eventTimeline: topic.eventTimeline || topic.abstract || '暂无详细事件脉络',
-    ideas: topic.ideas.map(idea => ({
-      name: idea.ideaName,
-      coreFeatures: idea.coreFeatures,
-      targetUsers: idea.targetUsers,
-      interestingScore: idea.interestingScore,
-      usefulScore: idea.usefulScore,
-      totalScore: idea.totalScore,
-      analysis: idea.interestingReason + ' ' + idea.usefulReason
-    }))
-  }));
-
-  const hotTopicsData = JSON.stringify(convertedTopics);
-
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>头条热搜产品创意分析报告 ${dateStr}</title>
+    <title>头条热搜产品创意分析报告 2026-01-08</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -551,19 +339,19 @@ function generateHTML(hotTopics, dateStr, timeStr) {
 
         <div class="summary">
             <div class="summary-card">
-                <div class="number">${hotTopics.length}</div>
+                <div class="number">10</div>
                 <div class="label">📊 分析热点数</div>
             </div>
             <div class="summary-card">
-                <div class="number">${totalIdeas}</div>
+                <div class="number">15</div>
                 <div class="label">💡 生成创意数</div>
             </div>
             <div class="summary-card">
-                <div class="number">${excellentCount}</div>
+                <div class="number">7</div>
                 <div class="label">🌟 优秀创意 (≥80分)</div>
             </div>
             <div class="summary-card">
-                <div class="number">${goodCount}</div>
+                <div class="number">8</div>
                 <div class="label">✨ 良好创意 (60-79分)</div>
             </div>
         </div>
@@ -571,14 +359,14 @@ function generateHTML(hotTopics, dateStr, timeStr) {
         <div id="hot-topics-container"></div>
 
         <div class="footer">
-            <p>📅 报告生成时间：<span id="generate-time"></span></p>
+            <p>📅 报告生成时间：2026/1/8 12:28:58 （已AI富化）</p>
             <p>🤖 本报告由AI自动生成，基于头条热搜数据和深度搜索分析</p>
             <p>⚠️ 产品创意评分仅供参考，实际开发需进行市场调研和用户验证</p>
         </div>
     </div>
 
     <script>
-        const hotTopicsData = ${hotTopicsData};
+        const hotTopicsData = [{"rank":1,"title":"美国退出66个国际组织","abstract":"美国退出66个国际组织","hotValue":"3721.8万","eventTimeline":"我注意到您还没有授予我网络搜索的权限。要完成这个任务，我需要使用WebSearch工具来搜索关于\"美国退出66个国际组织\"的最新新闻报道和相关信息。\n• **请授予WebSearch权限**，这样我就可以：\n• 1. 搜索相关新闻报道\n• 2. 整理关键事件节点\n• 4. 以简洁明了的方式呈现（每条不超过50字）","ideas":[{"name":"美国退出66个国际组助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化","用户互动和分享"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":68,"usefulScore":19,"totalScore":87,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":2,"title":"女子选车牌摇到豹子号苏A0000A","abstract":"女子选车牌摇到豹子号苏A0000A","hotValue":"3367.6万","eventTimeline":"抱歉，WebSearch工具需要您的授权才能使用。如果您想了解\"女子选车牌摇到豹子号苏A0000A\"的相关信息，请：\n• 1. **授权WebSearch工具** - 这样我就可以为您搜索最新的新闻报道\n• 2. 或者 **手动提供相关信息** - 如果您已经看到相关新闻，可以将内容分享给我，我帮您整理时间线","ideas":[{"name":"女子选车牌摇到豹子号助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化","用户互动和分享"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":64,"usefulScore":15,"totalScore":79,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"},{"name":"女子选车牌摇到豹子号管家","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":51,"usefulScore":18,"totalScore":69,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":3,"title":"科技创新活力涌动","abstract":"科技创新活力涌动","hotValue":"3047.2万","eventTimeline":"根据您项目中的热点数据，我发现了多个与\"科技创新活力\"相关的热点事件。让我为您整理时间线：\n• ## 科技创新活力涌动事件时间线\n• **2026年1月7日热点事件脉络：**\n• 1. **雷军晒超强钢发明专利证书**\n•    - 小米在材料技术领域取得突破","ideas":[{"name":"科技创新活力涌动助手","coreFeatures":["产品对比和评测","使用技巧和教程","问题诊断和解决"],"targetUsers":"18-35岁科技爱好者、数码产品用户、早期采用者","interestingScore":54,"usefulScore":14,"totalScore":68,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"},{"name":"科技创新活力涌动管家","coreFeatures":["产品对比和评测","使用技巧和教程","问题诊断和解决","最新资讯和推荐"],"targetUsers":"18-35岁科技爱好者、数码产品用户、早期采用者","interestingScore":54,"usefulScore":14,"totalScore":68,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":4,"title":"台军F16坠海飞行员最后通话曝光","abstract":"台军F16坠海飞行员最后通话曝光","hotValue":"2757.2万","eventTimeline":"我需要使用网络搜索功能来获取关于\"台军F16坠海飞行员最后通话曝光\"的最新信息。请授权我使用 WebSearch 工具，这样我就可以：\n• 1. 搜索相关的新闻报道\n• 2. 整理关键事件节点\n• 4. 为您提供简洁明了的事件脉络\n• 您希望我继续进行搜索吗？","ideas":[{"name":"台军F16坠海飞行员助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":69,"usefulScore":15,"totalScore":84,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":5,"title":"76人131-110大胜奇才","abstract":"76人131-110大胜奇才","hotValue":"2494.8万","eventTimeline":"抱歉，我目前无法直接访问外部搜索引擎来获取最新的体育新闻信息。我的网络搜索工具需要您的授权才能使用。\n• 不过，我可以提供几个替代方案：\n• ## 方案1：如果您有具体新闻链接\n• 如果您已经找到了相关新闻链接，我可以使用 `webReader` 工具来帮您抓取和分析这些网页内容，然后整理出事件脉络。\n• ## 方案2：本地数据分析","ideas":[{"name":"76人131-110助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":74,"usefulScore":12,"totalScore":86,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"},{"name":"76人131-110管家","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":64,"usefulScore":19,"totalScore":83,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":6,"title":"周恩来总理逝世50周年","abstract":"周恩来总理逝世50周年","hotValue":"2042.6万","eventTimeline":"我需要您授权使用 WebSearch 工具来搜索关于周恩来总理逝世50周年的最新信息。\n• 请问您是否同意我使用网络搜索功能来获取相关新闻报道？","ideas":[{"name":"周恩来总理逝世50周助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":74,"usefulScore":16,"totalScore":90,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":7,"title":"台军F16坠海画面公布","abstract":"台军F16坠海画面公布","hotValue":"2257.4万","eventTimeline":"看起来我需要您授权才能使用网络搜索功能。请您授权 WebSearch 工具的使用权限，这样我就可以为您搜索关于\"台军F16坠海画面公布\"的最新新闻信息，并整理出完整的事件脉络和时间线。\n• 或者，如果您希望我使用其他可用的工具（如网页抓取工具）来获取信息，请告诉我具体的新闻链接，我可以帮您读取并整理。","ideas":[{"name":"台军F16坠海画面公助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":51,"usefulScore":14,"totalScore":65,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":8,"title":"国防部：防止日本军国主义借尸还魂","abstract":"国防部：防止日本军国主义借尸还魂","hotValue":"1848.2万","eventTimeline":"我需要您的授权才能进行网络搜索。请允许我使用 WebSearch 工具来搜索关于\"国防部：防止日本军国主义借尸还魂\"的最新信息。\n• 1. 搜索相关新闻报道\n• 2. 整理关键事件节点\n• 4. 以简洁格式呈现（每条不超过50字）","ideas":[{"name":"国防部：防止日本军国助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":56,"usefulScore":11,"totalScore":67,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"},{"name":"国防部：防止日本军国管家","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化","用户互动和分享"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":56,"usefulScore":10,"totalScore":66,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":9,"title":"中央“点名”住房公积金释放什么信号","abstract":"中央“点名”住房公积金释放什么信号","hotValue":"1672.3万","eventTimeline":"我需要使用Web搜索工具来查找相关信息。请您授权我使用WebSearch功能，这样我就能搜索关于\"中央'点名'住房公积金释放什么信号\"的最新新闻报道，并为您整理出完整的事件脉络和时间线。\n• 1. 搜索相关新闻报道\n• 2. 整理关键事件节点\n• 4. 以简洁格式呈现（每条不超过50字）","ideas":[{"name":"中央“点名”住房公积助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化","用户互动和分享"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":74,"usefulScore":19,"totalScore":93,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"},{"name":"中央“点名”住房公积管家","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化","用户互动和分享"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":73,"usefulScore":16,"totalScore":89,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]},{"rank":10,"title":"你看好U23国足2026首秀吗","abstract":"你看好U23国足2026首秀吗","hotValue":"1238.9万","eventTimeline":"看起来我需要获得WebSearch工具的使用权限。让我尝试使用其他方式来帮您整理信息。\n• 根据我的知识，关于U23国足2026首秀的相关信息：\n• **U23国足2026首秀事件脉络**\n• 1. **2025年备战期**\n•    - U23国足（国奥队）开始备战2026年重要赛事","ideas":[{"name":"你看好U23国足20助手","coreFeatures":["信息聚合和筛选","个性化推荐","数据分析和可视化","用户互动和分享"],"targetUsers":"对相关领域感兴趣的普通用户","interestingScore":60,"usefulScore":19,"totalScore":79,"analysis":"基于当前热点趋势，具备传播潜力 解决实际用户需求"}]}];
 
         function renderHotTopics(data) {
             const container = document.getElementById('hot-topics-container');
@@ -596,7 +384,7 @@ function generateHTML(hotTopics, dateStr, timeStr) {
                     const ideaId = 'idea-' + ideaCounter++;
 
                     ideasHTML += '<div class="idea-card ' + scoreClass + '">';
-                    ideasHTML += '<div class="idea-header" onclick="toggleIdea(\\'' + ideaId + '\\')">';
+                    ideasHTML += '<div class="idea-header" onclick="toggleIdea(\'' + ideaId + '\')">';
                     ideasHTML += '<div class="idea-name">' + idea.name + '<span class="badge ' + badgeClass + '">' + badgeText + '</span><span class="toggle-icon" id="' + ideaId + '-icon">▼</span></div>';
                     ideasHTML += '<div class="idea-score ' + scoreClass + '">' + idea.totalScore + '分</div>';
                     ideasHTML += '</div>';
@@ -652,170 +440,4 @@ function generateHTML(hotTopics, dateStr, timeStr) {
         renderHotTopics(hotTopicsData);
     </script>
 </body>
-</html>`;
-}
-
-/**
- * 验证数据质量
- */
-function validateDataQuality(topics) {
-  const unknownThreshold = 3; // 连续未知标题阈值
-  let consecutiveUnknown = 0;
-
-  for (let i = 0; i < topics.length; i++) {
-    const title = topics[i].word || topics[i].title || topics[i].topic || '未知标题';
-    if (title === '未知标题') {
-      consecutiveUnknown++;
-      console.log(`   ⚠️  第 ${i + 1} 条: 未知标题`);
-
-      if (consecutiveUnknown >= unknownThreshold) {
-        return {
-          valid: false,
-          reason: `连续 ${unknownThreshold} 条未知标题，API数据异常`
-        };
-      }
-    } else {
-      consecutiveUnknown = 0; // 重置计数器
-    }
-  }
-
-  // 检查未知标题总数占比
-  const unknownCount = topics.filter(t => {
-    const title = t.word || t.title || t.topic || '未知标题';
-    return title === '未知标题';
-  }).length;
-
-  const unknownRatio = unknownCount / topics.length;
-  if (unknownRatio > 0.5) {
-    return {
-      valid: false,
-      reason: `未知标题占比过高: ${(unknownRatio * 100).toFixed(1)}% (${unknownCount}/${topics.length})`
-    };
-  }
-
-  return { valid: true };
-}
-
-/**
- * 主函数
- */
-async function main() {
-  console.log('========================================');
-  console.log('   头条热搜产品创意分析');
-  console.log('========================================\n');
-
-  try {
-    // 1. 获取热搜数据
-    console.log('📡 获取头条热搜数据...');
-    const hotTopics = await fetchToutiaoHot();
-    console.log(`✅ 获取到 ${hotTopics.length} 条热搜\n`);
-
-    // 2. 验证数据质量
-    console.log('🔍 验证数据质量...');
-    const qualityCheck = validateDataQuality(hotTopics);
-    if (!qualityCheck.valid) {
-      console.log('\n❌ 数据质量检测失败: ' + qualityCheck.reason);
-      console.log('💡 建议检查API状态或稍后重试\n');
-
-      // 返回失败结果
-      return {
-        success: false,
-        error: qualityCheck.reason,
-        shouldAbort: true // 标记需要终止后续流程
-      };
-    }
-    console.log('✅ 数据质量检测通过\n');
-
-    // 3. 分析每个热点，生成创意
-    console.log('🧠 分析热点并生成创意...');
-    let totalIdeas = 0;
-    let excellentCount = 0;
-
-    const processedTopics = hotTopics.map((topic, index) => {
-      // API 返回的字段：word (标题), hotindex (热度值)
-      const title = topic.word || topic.title || topic.topic || '未知标题';
-      const hotValue = topic.hotindex || topic.hot || topic.hotValue || '';
-
-      console.log(`   处理 ${index + 1}/${hotTopics.length}: ${title.substring(0, 20)}...`);
-
-      const ideas = generateIdeas({ ...topic, title });
-      totalIdeas += ideas.length;
-      excellentCount += ideas.filter(i => i.totalScore >= 80).length;
-
-      return {
-        rank: topic.rank || index + 1,
-        title: title,
-        abstract: topic.abstract || topic.desc || '',
-        hot: formatHotValue(hotValue),
-        hotValue: hotValue,
-        eventTimeline: topic.abstract || topic.desc || '',
-        ideas: ideas
-      };
-    });
-
-    console.log(`✅ 生成 ${totalIdeas} 个创意，其中 ${excellentCount} 个优秀创意\n`);
-
-    // 3. 生成时间戳
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const hour = String(now.getHours()).padStart(2, '0');
-
-    const dateStr = `${year}-${month}-${day}`;
-    const timeStr = `${hour}:00`;
-    const filename = `toutiaohot-analysis-${dateStr}-${hour}.html`;
-
-    // 4. 生成HTML
-    console.log('📝 生成HTML报告...');
-    const html = generateHTML(processedTopics, dateStr, timeStr);
-    const outputPath = path.join(config.outputDir, filename);
-    fs.writeFileSync(outputPath, html, 'utf-8');
-    console.log(`✅ 报告已生成: ${filename}\n`);
-
-    // 5. 输出摘要
-    console.log('========================================');
-    console.log('   分析摘要');
-    console.log('========================================');
-    console.log(`📅 日期: ${dateStr}`);
-    console.log(`⏰ 时间: ${timeStr}`);
-    console.log(`📊 分析热点: ${hotTopics.length}`);
-    console.log(`💡 生成创意: ${totalIdeas}`);
-    console.log(`⭐ 优秀创意: ${excellentCount}`);
-    console.log(`👍 良好创意: ${totalIdeas - excellentCount}`);
-    console.log(`📄 文件路径: ${filename}\n`);
-
-    // 6. 自动加入富化队列（后台异步AI分析）
-    console.log('📋 将报告加入富化队列...');
-    try {
-      const { enqueueForEnrichment } = require('./enrich-report');
-      enqueueForEnrichment(outputPath);
-      console.log('✅ 报告已加入富化队列，将在后台进行AI深度分析\n');
-    } catch (error) {
-      console.log(`⚠️  加入富化队列失败: ${error.message}`);
-      console.log('💡 可以稍后手动运行: node scripts/enrich-report.js\n');
-    }
-
-    return {
-      success: true,
-      filename: filename,
-      stats: {
-        hotTopics: hotTopics.length,
-        ideas: totalIdeas,
-        excellent: excellentCount,
-        good: totalIdeas - excellentCount
-      }
-    };
-
-  } catch (error) {
-    console.error('❌ 错误:', error.message);
-    throw error;
-  }
-}
-
-// 导出
-if (require.main === module) {
-  main();
-}
-
-module.exports = { main, validateDataQuality };
+</html>

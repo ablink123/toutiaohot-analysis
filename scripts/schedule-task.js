@@ -96,6 +96,15 @@ async function runTask() {
     const result = await generateReport.main();
 
     if (!result.success) {
+      if (result.shouldAbort) {
+        // 数据质量问题，不需要生成HTML和后续操作
+        console.log('\n========================================');
+        console.log('   任务终止');
+        console.log('========================================');
+        console.log(`⚠️  原因: ${result.error}`);
+        console.log('💡 已跳过HTML生成、飞书同步等后续操作\n');
+        return;
+      }
       throw new Error('报告生成失败');
     }
 
@@ -142,7 +151,25 @@ async function runTask() {
       );
     }
 
-    // 4. 归档HTML报告
+    // 4. 可选：启动后台富化（AI深度分析）
+    console.log('\n🤖 是否启动后台AI富化？');
+    console.log('   富化将为每个热搜添加详细的事件脉络（需要较长时间）');
+    console.log('   如果跳过，可以稍后手动运行: node scripts/enrich-report.js');
+
+    // 检查是否启用自动富化（可通过环境变量控制）
+    const autoEnrich = process.env.AUTO_ENRICH === 'true';
+
+    if (autoEnrich) {
+      console.log('⏳ 启动后台AI富化...');
+      executeCommand(
+        'node scripts/enrich-report.js',
+        '执行AI富化'
+      );
+    } else {
+      console.log('⏭️  跳过AI富化（可稍后手动执行）');
+    }
+
+    // 5. 归档HTML报告
     if (config.autoArchive) {
       executeCommand(
         `node scripts/archive-report.js "${latestFile}"`,
@@ -158,7 +185,7 @@ async function runTask() {
       );
     }
 
-    // 6. Git 提交和推送
+    // 7. Git 提交和推送
     if (config.autoGitPush) {
       const commitMsg = config.gitCommitTemplate
         .replace('{date}', timestamp.date)

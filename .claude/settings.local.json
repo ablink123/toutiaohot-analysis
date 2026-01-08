@@ -10,7 +10,10 @@
       "Bash(git commit:*)",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(start:*)",
+      "Bash(export MAX_TOPICS=15:*)",
+      "Bash(export:*)"
     ]
   }
 }
